@@ -12,15 +12,23 @@ const Slider = (props) => {
 
   useEffect(() => {
     sliderImages(dispatch);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+
+    // Set interval to automatically change slides every 2 seconds
+    const interval = setInterval(() => {
+      nextSlide(data.sliderImages.length, slide, setSlide);
+    }, 2000);
+
+    // Clean up the interval on component unmount
+    return () => clearInterval(interval);
+  }, [slide, data.sliderImages.length, dispatch]);
 
   return (
     <Fragment>
       <div className="relative mt-16 bg-gray-100 border-2">
         {data.sliderImages.length > 0 ? (
           <img
-            className="w-full"
+            className="w-full object-cover"
+            style={{ height: "500px" }} 
             src={`${apiURL}/uploads/customize/${data.sliderImages[slide].slideImage}`}
             alt="sliderImage"
           />
@@ -64,7 +72,7 @@ const Slider = (props) => {
                 d="M9 5l7 7-7 7"
               />
             </svg>
-            <div className="absolute inset-0 flex items-center justify-center">
+            {/* <div className="absolute inset-0 flex items-center justify-center">
               <a
                 href="#shop"
                 style={{ background: "#303031" }}
@@ -72,7 +80,7 @@ const Slider = (props) => {
               >
                 Shop Now
               </a>
-            </div>
+            </div> */}
           </>
         ) : null}
       </div>

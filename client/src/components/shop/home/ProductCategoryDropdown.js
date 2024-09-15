@@ -42,6 +42,8 @@ const CategoryList = () => {
                   className="col-span-1 m-2 flex flex-col items-center justify-center space-y-2 cursor-pointer"
                 >
                   <img
+                  className="w-full object-cover object-center cursor-pointer"
+                  style={{ height: "300px" }} 
                     src={`${apiURL}/uploads/categories/${item.cImage}`}
                     alt="pic"
                   />

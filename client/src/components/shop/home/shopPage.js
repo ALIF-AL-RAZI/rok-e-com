@@ -1,6 +1,5 @@
 import React, { Fragment, createContext, useReducer } from "react";
-import Layout from "../layout";
-import Slider from "./Slider";
+
 import ProductCategory from "./ProductCategory";
 import { homeState, homeReducer } from "./HomeContext";
 import SingleProduct from "./SingleProduct";
@@ -10,16 +9,7 @@ export const HomeContext = createContext();
 const HomeComponent = () => {
   return (
     <Fragment>
-      <div className="flex items-center flex-col md:flex-row lg:flex-row">
-      <div style={{ flex: '2 1 0%' }}>
-        <Slider />
-      </div>
-      <div className="  "
-       style={{ flex: '1 1 0%' }}>
-      <h1 className="font-bold sm:text-3xl md:text-5xl m-4 lg:text-6xl">Find your dream clothing...
-        </h1>
-        </div>
-      </div>
+      
 
 
       {/* Category, Search & Filter Section */}
@@ -34,7 +24,7 @@ const HomeComponent = () => {
   );
 };
 
-const Home = (props) => {
+const ShopPage = (props) => {
   const [data, dispatch] = useReducer(homeReducer, homeState);
   return (
     <Fragment>
@@ -45,4 +35,4 @@ const Home = (props) => {
   );
 };
 
-export default Home;
+export default ShopPage;

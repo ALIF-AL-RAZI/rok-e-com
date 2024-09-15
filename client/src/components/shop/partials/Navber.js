@@ -30,8 +30,55 @@ const Navber = (props) => {
   return (
     <Fragment>
       {/* Navber Section */}
-      <nav className="fixed top-0 w-full z-20 shadow-lg lg:shadow-none bg-white">
-        <div className="m-4 md:mx-12 md:my-6 grid grid-cols-4 lg:grid-cols-3">
+      <nav className="fixed top-0 w-full z-20 shadow-lg lg:shadow bg-white">
+        <div className="m-4 md:mx-12 md:my-6 display: flex items-center justify-between">
+
+
+          <div className="col-span-1 lg:hidden flex justify-items-stretch	 items-center">
+                      
+                      
+                      
+                      
+                      <svg
+                        onClick={(e) => navberToggleOpen()}
+                        className="col-span-1 lg:hidden w-8 h-8 cursor-pointer text-gray-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M4 6h16M4 12h16M4 18h16"
+                        />
+                      </svg>
+
+
+
+
+                      <span
+                        onClick={(e) => history.push("/")}
+                        style={{ letterSpacing: "0.10rem" }}
+                        className="flex items-left text-center font-bold uppercase text-gray-800 text-2xl cursor-pointer px-2 text-center"
+                      >
+                       
+                        ROK
+                      </span>
+                    </div>
+
+
+            <div
+                        onClick={(e) => history.push("/")}
+                        
+                        className="hidden lg:block flex items-left text-center text-gray-800 font-bold tracking-widest uppercase text-2xl cursor-pointer"
+                      >
+                        closet heaven
+                      </div>
+
+
+
           <div className="hidden lg:block col-span-1 flex text-gray-600 mt-1">
             <span
               className="hover:bg-gray-200 px-4 py-3 rounded-lg font-light tracking-widest hover:text-gray-800 cursor-pointer"
@@ -52,37 +99,16 @@ const Navber = (props) => {
               Contact us
             </span>
           </div>
-          <div className="col-span-2 lg:hidden flex justify-items-stretch	 items-center">
-            <svg
-              onClick={(e) => navberToggleOpen()}
-              className="col-span-1 lg:hidden w-8 h-8 cursor-pointer text-gray-600"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-            <span
-              onClick={(e) => history.push("/")}
-              style={{ letterSpacing: "0.10rem" }}
-              className="flex items-left text-center font-bold uppercase text-gray-800 text-2xl cursor-pointer px-2 text-center"
-            >
-              Hayroo
-            </span>
-          </div>
-          <div
-            onClick={(e) => history.push("/")}
-            style={{ letterSpacing: "0.70rem" }}
-            className="hidden lg:block flex items-left col-span-1 text-center text-gray-800 font-bold tracking-widest uppercase text-2xl cursor-pointer"
-          >
-            Rok
-          </div>
+
+
+
+
+          
+
+
+
+
+          
           <div className="flex items-right col-span-2 lg:col-span-1 flex justify-end">
             {/*  WishList Page Button */}
             <div

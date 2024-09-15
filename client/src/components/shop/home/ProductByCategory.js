@@ -60,6 +60,8 @@ const AllProduct = ({ products }) => {
                   <img
                     onClick={(e) => history.push(`/products/${item._id}`)}
                     className="w-full object-cover object-center cursor-pointer"
+                    // className="w-full object-cover object-center cursor-pointer"
+                    style={{ height: "300px" }} 
                     src={`${apiURL}/uploads/products/${item.pImages[0]}`}
                     alt=""
                   />
